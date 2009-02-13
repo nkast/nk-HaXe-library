@@ -22,10 +22,36 @@
  */
 
 package nk.layoutManager;
+import flash.display.DisplayObject;
+import flash.events.Event;
+import flash.Lib;
 
-enum HAlign 
+class StageStretch 
 {
-	Left;
-	Center;
-	Right;
+	var target:DisplayObject;
+	
+	public function new(target:DisplayObject) 
+	{
+		this.target = target;
+		
+		Lib.current.stage.addEventListener(Event.RESIZE, onResize);
+		
+		Resize();
+	}
+	
+	function onResize(e:Event):Void
+	{			
+		Resize();
+	}
+	
+	function Resize()
+	{
+		target.x = 0;
+		target.y = 0;
+		target.width = Lib.current.stage.stageWidth;
+		target.height = Lib.current.stage.stageHeight;
+		
+		return;
+	}
+	
 }
