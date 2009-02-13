@@ -8,6 +8,7 @@ import flash.display.MovieClip;
 import flash.events.MouseEvent;
 import flash.Lib;
 import nk.layoutManager.HAlign;
+import nk.layoutManager.StackVertical;
 import nk.layoutManager.VAlign;
 import nk.layoutManager.StackHorizontal;
 
@@ -22,9 +23,11 @@ class Sample extends MovieClip
 	}
 
 	var iControlPanel:ControlPanel;
-	var iTargetPlace:MovieClip;
+	var iTargetPlace1:MovieClip;
+	var iTargetPlace2:MovieClip;
 	
-	var stack:StackHorizontal;
+	var stackH:StackHorizontal;
+	var stackV:StackVertical;
 	
 	function Init()
 	{
@@ -43,34 +46,34 @@ class Sample extends MovieClip
 	
 	function onHAlignLeftClick(evt:MouseEvent)
 	{
-		stack.hAlign = HAlign.Left;
-		stack.Update();
+		stackH.hAlign = HAlign.Left;
+		stackH.Update();
 	}
 	function onHAlignCenterClick(evt:MouseEvent)
 	{
-		stack.hAlign = HAlign.Center;
-		stack.Update();
+		stackH.hAlign = HAlign.Center;
+		stackH.Update();
 	}
 	function onHAlignRightClick(evt:MouseEvent)
 	{
-		stack.hAlign = HAlign.Right;
-		stack.Update();
+		stackH.hAlign = HAlign.Right;
+		stackH.Update();
 	}
 	
 	function onVAlignTopClick(evt:MouseEvent)
 	{
-		stack.vAlign = VAlign.Top;
-		stack.Update();
+		stackH.vAlign = VAlign.Top;
+		stackH.Update();
 	}
 	function onVAlignMiddleClick(evt:MouseEvent)
 	{
-		stack.vAlign = VAlign.Middle;
-		stack.Update();
+		stackH.vAlign = VAlign.Middle;
+		stackH.Update();
 	}
 	function onVAlignBottomClick(evt:MouseEvent)
 	{
-		stack.vAlign = VAlign.Bottom;
-		stack.Update();		
+		stackH.vAlign = VAlign.Bottom;
+		stackH.Update();		
 	}
 	
 	
@@ -79,21 +82,30 @@ class Sample extends MovieClip
 	function onSetGapClick(evt:MouseEvent)
 	{
 		var gap:Float = Std.parseFloat(iControlPanel.iGap.text); 		
-		stack.SetGap(gap);
-		stack.Update();
+		var w:Float = Std.parseFloat(iControlPanel.iWidth.text);
+		var h:Float = Std.parseFloat(iControlPanel.iWidth.text);
+		
+		stackH.SetGap(gap);
+		trace(w);
+		stackH.Margin.width = w;
+		
+		stackH.Update();
 	}
 	
 	function SH()
 	{
 		var gap:Float = Std.parseFloat(iControlPanel.iGap.text); 		
-		stack = new StackHorizontal(iTargetPlace, gap);
-		stack.AddChild(Lib.attach("Item01"));
-		stack.AddChild(Lib.attach("Item04"));
-		stack.AddChild(Lib.attach("Item02"));
-		stack.AddChild(Lib.attach("Item05"));
-		stack.AddChild(Lib.attach("Item03"));
+		var w:Float = Std.parseFloat(iControlPanel.iWidth.text);
+		var h:Float = Std.parseFloat(iControlPanel.iWidth.text);
 		
-		stack.Margin.width = 300;
+		stackH = new StackHorizontal(iTargetPlace1, gap);
+		stackH.AddChild(Lib.attach("Item01"));
+		stackH.AddChild(Lib.attach("Item04"));
+		stackH.AddChild(Lib.attach("Item02"));
+		stackH.AddChild(Lib.attach("Item05"));
+		stackH.AddChild(Lib.attach("Item03"));
+		
+		stackH.Margin.width = w;
 		
 		
 		return;
