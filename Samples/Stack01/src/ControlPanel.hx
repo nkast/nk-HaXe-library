@@ -20,6 +20,7 @@ class ControlPanel extends MovieClip
 	
 	public var iGap:TextField;
 	public var iWidth:TextField;
+	public var iHeight:TextField;
 	public var iSetGap:Button;
 
 	public function new()
