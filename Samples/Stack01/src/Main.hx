@@ -12,7 +12,7 @@ class Main
 	
 	static function main() 
 	{
-		Lib.current.stage.addChild(new Sample());
+		Lib.current.addChild(new Sample());
 	}
 	
 }
