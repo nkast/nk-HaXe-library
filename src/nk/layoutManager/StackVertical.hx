@@ -56,10 +56,12 @@ class StackVertical extends StackBase
 		var posx = Margin.left + offsetx;
 		var posy = Margin.top + offsety;
 		
-		var child:DisplayObject;		
+		var child:DisplayObject;
 		for (child in children)
 		{
-			child.x = posx;
+			child.x = posx; //left & right
+			if (hAlign == HAlign.Center) child.x = (w - (child.width))/2;
+
 			child.y = posy;
 			if(CheckVisibility == true && !child.visible) continue;
 			posy += child.height + vGap;
@@ -70,7 +72,7 @@ class StackVertical extends StackBase
 	
 	override public function SetGap(gap:Float):Void
 	{		
-		vGap = gap;		
+		vGap = gap;
 	}
 	
 	public function GetTotalHeight():Float 
