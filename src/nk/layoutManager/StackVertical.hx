@@ -43,14 +43,14 @@ class StackVertical extends StackBase
 		var w = GetMaxItemWidth();
 		var h = GetTotalHeight();
 		
-		if (hAlign == HAlign.Center) offsetx = Math.max(0, Margin.width - w) / 2;
-		if (hAlign == HAlign.Right)  offsetx = Math.max(0, Margin.width - w);
+		if (hAlign == HAlign.Center) offsetx = Math.max(0, Width - w) / 2;
+		if (hAlign == HAlign.Right)  offsetx = Math.max(0, Width - w);
 			
-		if (vAlign == VAlign.Middle) offsety = Math.max(0, Margin.height - h) / 2;
-		if (vAlign == VAlign.Bottom) offsety = Math.max(0, Margin.height - h);
+		if (vAlign == VAlign.Middle) offsety = Math.max(0, Height - h) / 2;
+		if (vAlign == VAlign.Bottom) offsety = Math.max(0, Height - h);
 			
-		var posx = Margin.left + offsetx;
-		var posy = Margin.top + offsety;
+		var posx = Left + offsetx;
+		var posy = Top + offsety;
 		
 		var child:DisplayObject;
 		for (child in children)

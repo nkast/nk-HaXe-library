@@ -30,7 +30,11 @@ class StackBase
 {
 	public var Target(default,null):MovieClip;
 	var children:Array<DisplayObject>;
-	public var Margin: Rectangle;
+	
+	public var Left: Float;
+	public var Top: Float;
+	public var Width: Float;
+	public var Height: Float;
 	
 	private var hGap : Float;
 	private var vGap : Float;
@@ -42,10 +46,15 @@ class StackBase
 	{
 		this.Target = mc;
 		children = new Array<DisplayObject>();
-		Margin = new Rectangle(0, 0, 0, 0);
 		hAlign = HAlign.Left;
 		vAlign = VAlign.Top;
 		hGap = vGap = 0;
+		
+		Left = 0;
+		Top=0;
+		Width=0;
+		Height=0;
+	
 		CheckVisibility = true;
 	}
 	

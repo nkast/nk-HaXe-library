@@ -99,13 +99,13 @@ class Sample extends MovieClip
 		var h:Float = Std.parseFloat(iControlPanel.iHeight.text);
 		
 		stackH.SetGap(gap);
-		stackH.Margin.width = w;
-		stackH.Margin.height = h;
+		stackH.Width = w;
+		stackH.Height = h;
 		stackH.Update();
 		
 		stackV.SetGap(gap);
-		stackV.Margin.width = w;
-		stackV.Margin.height = h;
+		stackV.Width = w;
+		stackV.Height = h;
 		stackV.Update();
 		
 	}
@@ -123,8 +123,8 @@ class Sample extends MovieClip
 		stackH.AddChild(Lib.attach("Item05"));
 		stackH.AddChild(Lib.attach("Item03"));
 		
-		stackH.Margin.width = w;
-		stackH.Margin.height = h;
+		stackH.Width = w;
+		stackH.Height = h;
 		
 		return;
 	}
@@ -142,8 +142,8 @@ class Sample extends MovieClip
 		stackV.AddChild(Lib.attach("Item05"));
 		stackV.AddChild(Lib.attach("Item03"));
 		
-		stackV.Margin.width = w;
-		stackV.Margin.height = h;
+		stackV.Width = w;
+		stackV.Height = h;
 		
 		return;
 	}
