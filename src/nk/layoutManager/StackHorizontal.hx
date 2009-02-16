@@ -39,13 +39,14 @@ class StackHorizontal extends StackBase
 		var offsetx:Float = 0;
 		var offsety:Float = 0;
 		
-		var w = GetSumItemWidth() + hGap * (children.length-1);
+		var w = GetTotalWidth();
 		var h = GetMaxItemHeight();
 		
-		if (hAlign == HAlign.Right)
-			offsetx = Math.max(0, Margin.width - w);
-		if (hAlign == HAlign.Center)
-			offsetx = Math.max(0, Margin.width - w) / 2;
+		if (hAlign == HAlign.Center) offsetx = Math.max(0, Margin.width - w) / 2;
+		if (hAlign == HAlign.Right)  offsetx = Math.max(0, Margin.width - w);
+		
+		if (vAlign == VAlign.Middle) offsety = Math.max(0, Margin.height - h) / 2;
+		if (vAlign == VAlign.Bottom) offsety = Math.max(0, Margin.height - h);
 			
 		var posx = Margin.left + offsetx;
 		var posy = Margin.top + offsety;
@@ -55,6 +56,11 @@ class StackHorizontal extends StackBase
 		{
 			child.x = posx;
 			child.y = posy;
+			
+			if (vAlign == VAlign.Middle) child.y = posy + (h - (child.height))/2;
+			if (vAlign == VAlign.Bottom) child.y = posy + (h - (child.height));
+			
+			if (CheckVisibility == true && !child.visible) continue;
 			posx += child.width + hGap;
 		}
 		return;
@@ -63,6 +69,11 @@ class StackHorizontal extends StackBase
 	override public function SetGap(gap:Float):Void
 	{
 		hGap = gap;
+	}
+	
+	public function GetTotalWidth():Float 
+	{		
+		return GetSumItemWidth() + hGap * (children.length - 1);
 	}
 	
 	

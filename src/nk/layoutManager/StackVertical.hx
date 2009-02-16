@@ -43,15 +43,11 @@ class StackVertical extends StackBase
 		var w = GetMaxItemWidth();
 		var h = GetTotalHeight();
 		
-		if (hAlign == HAlign.Right)
-			offsetx = Math.max(0, Margin.width - w);
-		if (hAlign == HAlign.Center)
-			offsetx = Math.max(0, Margin.width - w) / 2;
+		if (hAlign == HAlign.Center) offsetx = Math.max(0, Margin.width - w) / 2;
+		if (hAlign == HAlign.Right)  offsetx = Math.max(0, Margin.width - w);
 			
-		if (vAlign == VAlign.Bottom)
-			offsety = Math.max(0, Margin.height - h);
-		if (vAlign == VAlign.Middle)
-			offsety = Math.max(0, Margin.height - h) / 2;
+		if (vAlign == VAlign.Middle) offsety = Math.max(0, Margin.height - h) / 2;
+		if (vAlign == VAlign.Bottom) offsety = Math.max(0, Margin.height - h);
 			
 		var posx = Margin.left + offsetx;
 		var posy = Margin.top + offsety;
@@ -59,11 +55,13 @@ class StackVertical extends StackBase
 		var child:DisplayObject;
 		for (child in children)
 		{
-			child.x = posx; //left & right
-			if (hAlign == HAlign.Center) child.x = (w - (child.width))/2;
-
+			child.x = posx;
 			child.y = posy;
-			if(CheckVisibility == true && !child.visible) continue;
+			
+			if (hAlign == HAlign.Center) child.x = posx + (w - (child.width))/2;
+			if (hAlign == HAlign.Right) child.x = posx + (w - (child.width));
+
+			if (CheckVisibility == true && !child.visible) continue;			
 			posy += child.height + vGap;
 		}
 	
