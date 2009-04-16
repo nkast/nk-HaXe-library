@@ -28,7 +28,7 @@ import flash.events.Event;
 import flash.geom.PerspectiveProjection;
 import flash.geom.Point;
 import flash.Lib;
-import nk.layoutManager.virtual.VirtualUtil;
+import nk.virtual.VirtualUtil;
 
 
 class StageAlign 
