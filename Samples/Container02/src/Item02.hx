@@ -9,19 +9,19 @@ import feffects.easing.Linear;
 import feffects.Tween;
 import nk.containers.ContentPageBase;
 
-class Item01 extends ContentPageBase
+class Item02 extends ContentPageBase
 {
 
 	public function new() 
 	{
 		super();
 		visible = false;
-		alpha = 0;
+		x = 600;
 	}
 	
 	function onTweenUpdate( e : Float )
 	{
-		this.alpha = e;
+		this.x = e;
 	}	
 	function TweenEnd( e : Float )
 	{
@@ -31,9 +31,9 @@ class Item01 extends ContentPageBase
 	public override function Begin()
 	{		
 		super.Begin();
-	
+		
 		visible = true;		
-		var t = new Tween( this, alpha, 1, 2000 );
+		var t = new Tween( this, x, 0, 2000 );
 		t.setEasing(  Linear.easeInOut );
 		t.setTweenHandlers( onTweenUpdate,  function(e){} );
 		t.start();
@@ -45,13 +45,11 @@ class Item01 extends ContentPageBase
 	{		
 		super.End();
 		
-		var t = new Tween( this, alpha, 0, 1000 );
+		var t = new Tween( this, x, 600, 1000 );
 		t.setEasing(  Linear.easeInOut );
 		t.setTweenHandlers( onTweenUpdate,  TweenEnd );
 		t.start();
 		
-		
-		//TweenMax.delayedCall(1.1, onEndComplete);
 	}
 	
 	
