@@ -18,9 +18,9 @@ class ControlPanel extends MovieClip
 	{
 		super();
 		
-		iAddMC01.iLabel.text = "Fade";
-		iAddMC02.iLabel.text = "Left";
-		iAddMC03.iLabel.text = "Top";
+		iAddMC01.iLabel.text = "MC 1";
+		iAddMC02.iLabel.text = "MC 2";
+		iAddMC03.iLabel.text = "MC 3";
 	
 	}
 	
