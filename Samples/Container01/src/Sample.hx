@@ -28,7 +28,11 @@ class Sample extends MovieClip
 		
 		iControlPanel.iAddMC01.addEventListener(MouseEvent.CLICK, onAddMC01Click);
 		iControlPanel.iAddMC02.addEventListener(MouseEvent.CLICK, onAddMC02Click);
-		iControlPanel.iAddMC03.addEventListener(MouseEvent.CLICK, onAddMC03Click);		
+		iControlPanel.iAddMC03.addEventListener(MouseEvent.CLICK, onAddMC03Click);
+		iControlPanel.iAddMC04.addEventListener(MouseEvent.CLICK, onAddMC04Click);
+		iControlPanel.iAddMC05.addEventListener(MouseEvent.CLICK, onAddMC05Click);
+		iControlPanel.iClear.addEventListener(MouseEvent.CLICK, onClearClick);
+		
 	}
 	
 	function onAddMC01Click(evt:MouseEvent)
@@ -46,6 +50,21 @@ class Sample extends MovieClip
 		var mc:MovieClip = Lib.attach("Item03");
 		contentMgr.AddContent(mc);
 	}
+	function onAddMC04Click(evt:MouseEvent)
+	{
+		var mc:MovieClip = Lib.attach("Item04");
+		contentMgr.AddContent(mc);
+	}
+	function onAddMC05Click(evt:MouseEvent)
+	{
+		var mc:MovieClip = Lib.attach("Item05");
+		contentMgr.AddContent(mc);
+	}
+	function onClearClick(evt:MouseEvent)
+	{		
+		contentMgr.EndAll();
+	}
+	
 	
 	
 	
