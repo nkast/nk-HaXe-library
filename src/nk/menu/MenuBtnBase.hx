@@ -92,7 +92,7 @@ class MenuBtnBase extends MovieClip
 	//External. Only to be called from the user.
 	public function Deselect():Void
 	{
-		SetDeselectState();	
+		SetDeselectState();
 	}
 	
 	//External. Only to be called from the user or mouse events. 
