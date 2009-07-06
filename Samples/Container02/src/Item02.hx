@@ -33,7 +33,7 @@ class Item02 extends ContentPageBase
 		super.Begin();
 		
 		visible = true;		
-		var t = new Tween( this, x, 0, 2000 );
+		var t = new Tween( this, x, 0, 1400 );
 		t.setEasing(  Linear.easeInOut );
 		t.setTweenHandlers( onTweenUpdate,  function(e){} );
 		t.start();
@@ -45,7 +45,7 @@ class Item02 extends ContentPageBase
 	{		
 		super.End();
 		
-		var t = new Tween( this, x, 600, 1000 );
+		var t = new Tween( this, x, 600, 800 );
 		t.setEasing(  Linear.easeInOut );
 		t.setTweenHandlers( onTweenUpdate,  TweenEnd );
 		t.start();
