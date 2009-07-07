@@ -4,7 +4,7 @@
   <output>
     <movie disabled="False" />
     <movie input="" />
-    <movie path="bin\Buttons01.swf" />
+    <movie path="bin\Buttons02.swf" />
     <movie fps="30" />
     <movie width="540" />
     <movie height="320" />
@@ -19,11 +19,11 @@
   <!-- Build options -->
   <build>
     <option directives="" />
-    <option flashStrict="True" />
+    <option flashStrict="False" />
     <option mainClass="Main" />
     <option override="False" />
     <option verbose="False" />
-    <option additional="-debug" />
+    <option additional="-debug " />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
