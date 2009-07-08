@@ -5,6 +5,7 @@
 
 package ;
 import flash.display.MovieClip;
+import nk.menu.BtnCollection;
 import nk.menu.MenuContainerBase;
 
 class Sample extends MovieClip
@@ -12,7 +13,8 @@ class Sample extends MovieClip
 	var mcBtn01:Btn01;
 	var mcBtn02:Btn02;
 	var mcBtn03:Btn03;
-	var btnColection:MenuContainerBase;
+	//var btnCollection:MenuContainerBase;
+	var btnCollection:BtnCollection;
 
 	public function new()
 	{
@@ -21,11 +23,12 @@ class Sample extends MovieClip
 	}
 	
 	function Init()
-	{
-		btnColection = new MenuContainerBase(null);
-		btnColection.AddMenuBtn(this.mcBtn01);
-		btnColection.AddMenuBtn(this.mcBtn02);
-		btnColection.AddMenuBtn(this.mcBtn03);
+	{	
+		btnCollection = new BtnCollection();
+		btnCollection.AddBtn(this.mcBtn01);
+		btnCollection.AddBtn(this.mcBtn02);
+		btnCollection.AddBtn(this.mcBtn03);
+		
 		
 	}
 	
