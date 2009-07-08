@@ -182,7 +182,7 @@ class MenuBtnBase extends MovieClip
 	//Internal.
 	private function SetDeactivateState()
 	{
-		if (interactionState == MenuBtnInteractionState.Normal) return;		
+		if (interactionState == MenuBtnInteractionState.Normal) return;
 		interactionState = MenuBtnInteractionState.Normal;
 		dispatchEvent(new MenuEvent(MenuEvent.BUTTON_DEACTIVATED, this));
 		dispatchEvent(new MenuEvent(MenuEvent.STATE_CHANGE, this));
