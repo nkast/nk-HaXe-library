@@ -29,13 +29,15 @@ import flash.Lib;
 class StageStretch 
 {
 	var target:DisplayObject;
+	var dir:Direction;
 	
-	public function new(target:DisplayObject) 
+	public function new(target:DisplayObject,?dir:Direction)
 	{
 		this.target = target;
+		if (dir == null) dir = Direction.Both;
+		this.dir = dir;
 		
-		Lib.current.stage.addEventListener(Event.RESIZE, onResize);
-		
+		Lib.current.stage.addEventListener(Event.RESIZE, onResize);		
 		Resize();
 	}
 	
@@ -48,8 +50,8 @@ class StageStretch
 	{
 		target.x = 0;
 		target.y = 0;
-		target.width = Lib.current.stage.stageWidth;
-		target.height = Lib.current.stage.stageHeight;
+		if(dir == Direction.Both || dir == Direction.Horizontal) target.width = Lib.current.stage.stageWidth;
+		if(dir == Direction.Both || dir == Direction.Vertical) target.height = Lib.current.stage.stageHeight;
 		
 		return;
 	}
