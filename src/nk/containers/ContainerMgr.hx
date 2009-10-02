@@ -23,16 +23,16 @@
 
 package nk.containers;
 import flash.display.DisplayObject;
-import flash.display.MovieClip;
+import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
 class ContainerMgr extends EventDispatcher
 {
-	private var container:MovieClip;
+	private var container:Sprite;
 	private var items:Array<DisplayObject>;
 	
-	public function new(container:MovieClip)
+	public function new(container:Sprite)
 	{
 		super();
 		this.container = container;
@@ -90,7 +90,7 @@ class ContainerMgr extends EventDispatcher
 	
 	private function onContentPageFinished(evt:ContainersEvent)
 	{
-		var mc:MovieClip = evt.target;
+		var mc:Sprite = evt.target;
 	
 		//remove finished movie from container
 		items.remove(mc);

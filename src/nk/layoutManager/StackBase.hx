@@ -64,10 +64,11 @@ class StackBase
 		Update();
 	}
 	
-	public function AddChild(child:DisplayObject):Void
+	public function AddChild(child:DisplayObject):DisplayObject
 	{
 		Target.addChild(child);
 		AddObj(child);
+		return child;
 	}
 	
 	public function RemoveAllObj()
@@ -85,6 +86,11 @@ class StackBase
 	public function GetLength():Int
 	{
 		return children.length;
+	}
+	
+	public function GetChildren():Array<DisplayObject>
+	{
+		return children;
 	}
 	
 	

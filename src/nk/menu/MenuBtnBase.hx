@@ -46,7 +46,7 @@ class MenuBtnBase extends MovieClip
 		
 	}
 	
-	private  function MouseOver(evt:MouseEvent)
+	private function MouseOver(evt:MouseEvent)
 	{
 		Activate();
 	}
