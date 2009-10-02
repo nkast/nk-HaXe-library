@@ -25,6 +25,7 @@ package nk.layoutManager;
 import flash.display.DisplayObject;
 import flash.display.MovieClip;
 import flash.geom.Rectangle;
+import nk.virtual.VirtualUtil;
 
 class StackVertical extends StackBase
 {	
@@ -62,7 +63,7 @@ class StackVertical extends StackBase
 			if (hAlign == HAlign.Right) child.x = posx + (w - (child.width));
 
 			if (CheckVisibility == true && !child.visible) continue;			
-			posy += child.height + vGap;
+			posy += VirtualUtil.Height(child) + vGap;
 		}
 	
 		return;
