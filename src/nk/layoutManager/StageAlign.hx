@@ -25,7 +25,6 @@ package nk.layoutManager;
 import flash.display.DisplayObject;
 import flash.display.MovieClip;
 import flash.events.Event;
-import flash.geom.PerspectiveProjection;
 import flash.geom.Point;
 import flash.Lib;
 import nk.virtual.VirtualUtil;
