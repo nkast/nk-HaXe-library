@@ -13,7 +13,7 @@ class InvalidatableSprite extends Sprite, implements IInvalidatable
 	public function new()
 	{
 		super();
-		isInvalid = false;
+		isInvalid = true;
 	}
 	
 	public function Invalidate():Void
