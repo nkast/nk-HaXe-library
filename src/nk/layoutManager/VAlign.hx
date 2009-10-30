@@ -26,6 +26,6 @@ package nk.layoutManager;
 enum VAlign 
 {
 	Top;
-	Middle;
+	Middle; 
 	Bottom;
 }
