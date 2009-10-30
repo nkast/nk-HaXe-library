@@ -5,8 +5,8 @@
 
 package ;
 import flash.display.MovieClip;
-import nk.uiElements.SolidColorBrush;
-import nk.uiElements.Triangle;
+import nk.visualElements.SolidColorBrush;
+import nk.visualElements.Triangle;
 import feffects.easing.Elastic;
 import feffects.easing.Circ;
 import feffects.easing.Sine;
@@ -59,18 +59,18 @@ class Sample extends MovieClip
 		
 		var rtAX1:RandTween = new RandTween(triangleA, "X1", 540);
 		var rtAY1:RandTween = new RandTween(triangleA, "Y1", 320);
-		var rtAX2:RandTween = new RandTween(triangleA, "_X2", 540);
-		var rtAY2:RandTween = new RandTween(triangleA, "_Y2", 320);
-		var rtAX3:RandTween = new RandTween(triangleA, "_X3", 540);
-		var rtAY3:RandTween = new RandTween(triangleA, "_Y3", 320);
+		var rtAX2:RandTween = new RandTween(triangleA, "X2", 540);
+		var rtAY2:RandTween = new RandTween(triangleA, "Y2", 320);
+		var rtAX3:RandTween = new RandTween(triangleA, "X3", 540);
+		var rtAY3:RandTween = new RandTween(triangleA, "Y3", 320);
 		
 		
-		var rtBX1:RandTween = new RandTween(triangleB, "_X1", 540);
-		var rtBY1:RandTween = new RandTween(triangleB, "_Y1", 320);
-		var rtBX2:RandTween = new RandTween(triangleB, "_X2", 540);
-		var rtBY2:RandTween = new RandTween(triangleB, "_Y2", 320);
-		var rtBX3:RandTween = new RandTween(triangleB, "_X3", 540);
-		var rtBY3:RandTween = new RandTween(triangleB, "_Y3", 320);
+		var rtBX1:RandTween = new RandTween(triangleB, "X1", 540);
+		var rtBY1:RandTween = new RandTween(triangleB, "Y1", 320);
+		var rtBX2:RandTween = new RandTween(triangleB, "X2", 540);
+		var rtBY2:RandTween = new RandTween(triangleB, "Y2", 320);
+		var rtBX3:RandTween = new RandTween(triangleB, "X3", 540);
+		var rtBY3:RandTween = new RandTween(triangleB, "Y3", 320);
 		
 		
 	}
