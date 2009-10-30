@@ -10,7 +10,7 @@ class Brush
 {
 	public function new() 
 	{
-		
+		 
 	}
 	
 	public function BeginFill(target:Sprite) 
