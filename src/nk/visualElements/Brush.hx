@@ -3,7 +3,7 @@
  * @author Kastellanos Nikos
  */
 
-package nk.uiElements;
+package nk.visualElements;
 import flash.display.Sprite;
 
 class Brush 
