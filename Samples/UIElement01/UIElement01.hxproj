@@ -4,12 +4,12 @@
   <output>
     <movie disabled="False" />
     <movie input="" />
-    <movie path="bin\Container02.swf" />
+    <movie path="bin\UIElement01.swf" />
     <movie fps="30" />
     <movie width="540" />
     <movie height="320" />
     <movie version="9" />
-    <movie background="#FFFFFF" />
+    <movie background="#FF8040" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
@@ -24,7 +24,7 @@
     <option mainClass="Main" />
     <option override="False" />
     <option verbose="False" />
-    <option additional=" -D fdb -debug " />
+    <option additional="" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
@@ -36,7 +36,7 @@
   </compileTargets>
   <!-- Assets to embed into the output SWF -->
   <library>
-    <asset path="ContentPages.swf" />
+    <!-- example: <asset path="..." id="..." update="..." glyphs="..." mode="..." place="..." sharepoint="..." /> -->
   </library>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
@@ -49,6 +49,6 @@
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
-    <option testMovie="ExternalPlayer" />
+    <option testMovie="Default" />
   </options>
 </project>

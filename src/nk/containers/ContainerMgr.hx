@@ -50,7 +50,7 @@ class ContainerMgr extends EventDispatcher
 			container.addChild(content);
 			items.push(content);
 			if (items.length == 1)
-			{ 				
+			{
 				cp.Begin();
 			}
 		}
@@ -59,8 +59,7 @@ class ContainerMgr extends EventDispatcher
 			container.addChild(content);
 			items.push(content);
 		}
-		
-		
+				
 		content.addEventListener(ContainersEvent.CONTENTPAGE_END_FINISHED, onContentPageFinished);
 		return content;
 	}
