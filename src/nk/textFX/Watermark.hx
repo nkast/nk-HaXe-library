@@ -3,11 +3,11 @@
  * @author Kastellanos Nikos
  */
 
-package ;
+package nk.textFX;
 import flash.events.FocusEvent;
 import flash.text.TextField;
 
-class nk.textFX.Watermark 
+class Watermark 
 {
 	var target:TextField;
 	var wmTxt:String;
@@ -19,10 +19,10 @@ class nk.textFX.Watermark
 		this.target = target;
 		this.wmTxt = wmTxt;
 		
-		this.wmColor = 0xA0A0A0;
+		this.wmColor = 0xC0C0C0;
 		this.defaultColor = this.target.textColor;
 		
-		this.target.text = wmTxt;		
+		this.target.text = wmTxt;
 		target.textColor = wmColor;
 		
 		target.addEventListener(FocusEvent.FOCUS_IN, onFocusIn);
