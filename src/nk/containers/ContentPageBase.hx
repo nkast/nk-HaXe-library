@@ -28,23 +28,28 @@ class ContentPageBase extends MovieClip, implements IContentPage
 {
 	public var CPState(default, null):ContentPageState;
 
-	public function new() 
+	public function new()
 	{
 		super();
 		CPState = ContentPageState.Init;
 	}
 	
+	private function onBegin() { }
+	private function onEnd() { }
+	
 	public function Begin()
 	{
 		CPState = ContentPageState.Begin;
+		onBegin();
 	}
 	
 	public function End()
 	{
 		CPState = ContentPageState.End;
 		dispatchEvent(new ContainersEvent(ContainersEvent.CONTENTPAGE_END_STARTED));
+		onEnd();
 	}
-	
+		
 	private function onEndComplete()
 	{
 		dispatchEvent(new ContainersEvent(ContainersEvent.CONTENTPAGE_END_FINISHED));
