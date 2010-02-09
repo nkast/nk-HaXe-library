@@ -5,7 +5,7 @@
     <movie disabled="False" />
     <movie input="" />
     <movie path="bin\UIElement01.swf" />
-    <movie fps="30" />
+    <movie fps="60" />
     <movie width="540" />
     <movie height="320" />
     <movie version="9" />
