@@ -5,6 +5,8 @@
 
 package ;
 import flash.display.MovieClip;
+import flash.Lib;
+import nk.tools.FPS;
 import nk.visualElements.SolidColorBrush;
 import nk.visualElements.Triangle;
 import feffects.easing.Elastic;
@@ -17,85 +19,56 @@ class Sample extends MovieClip
 {
 	var triangleA:Triangle;
 	var triangleB:Triangle;
-	var tAX1:Tween;
-	var tBY3:Tween;
-	
+	var triangleC:Triangle;
+	var triangleD:Triangle;
 	
 	public function new() 
 	{
 		super();
+		Lib.current.addChild(addChild(new FPS()) );
 		Init();
 	}
 	
 	function Init()
 	{
-		triangleA = cast addChild(new Triangle());
-		triangleB = cast addChild(new Triangle());
+		triangleA = InitTriangle(10, 10, 100, 180, 150, 150 , 0x80FFFFFF);
+		triangleB = InitTriangle(220,60, 300,200, 350,250 , 0x800000FF);
+		triangleC = InitTriangle(10, 10, 100, 180, 150, 150 , 0x80FF40C0);
+		triangleD = InitTriangle(220,60, 300,200, 350,250 , 0x80FFFF00);		
 		
-		triangleA.X1 = 10;
-		triangleA.Y1 = 10;
-		triangleA.X2 = 100;
-		triangleA.Y2 = 180;
-		triangleA.X3 = 150;
-		triangleA.Y3 = 150;
-		
-		triangleB.X1 = 220;
-		triangleB.Y1 = 60;
-		triangleB.X2 = 300;
-		triangleB.Y2 = 200;
-		triangleB.X3 = 350;
-		triangleB.Y3 = 250;
-		
-		triangleA.Stroke = 0xFFFFFFFF;
 		triangleB.Stroke = 0xFF8080FF;
-		triangleA.Fill = new SolidColorBrush(0x80FFFFFF);
-		triangleB.Fill = new SolidColorBrush(0x800000FF);
+		triangleC.Stroke = 0xFFFFA0FF;
+		triangleD.Stroke = 0xFFFFFF40;
 		
-		
-		triangleA.Invalidate();
-		triangleB.Invalidate();
-		triangleA.ValidateNow();
-		triangleB.ValidateNow();
-		
-		var rtAX1:RandTween = new RandTween(triangleA, "X1", 540);
-		var rtAY1:RandTween = new RandTween(triangleA, "Y1", 320);
-		var rtAX2:RandTween = new RandTween(triangleA, "X2", 540);
-		var rtAY2:RandTween = new RandTween(triangleA, "Y2", 320);
-		var rtAX3:RandTween = new RandTween(triangleA, "X3", 540);
-		var rtAY3:RandTween = new RandTween(triangleA, "Y3", 320);
-		
-		
-		var rtBX1:RandTween = new RandTween(triangleB, "X1", 540);
-		var rtBY1:RandTween = new RandTween(triangleB, "Y1", 320);
-		var rtBX2:RandTween = new RandTween(triangleB, "X2", 540);
-		var rtBY2:RandTween = new RandTween(triangleB, "Y2", 320);
-		var rtBX3:RandTween = new RandTween(triangleB, "X3", 540);
-		var rtBY3:RandTween = new RandTween(triangleB, "Y3", 320);
-		
-		
+		return;
 	}
 	
-	function onAX1Update( e : Float )
+	function InitTriangle(X1,Y1, X2,Y2, X3,Y3, fillcolor:UInt)
 	{
-		triangleA.X1 = e;
-		triangleA.ValidateNow();
-	}	
-	
-	function onBY3Update( e : Float )
-	{	
-		triangleB.Y3 = e;
-		triangleB.ValidateNow();
+		var triangle:Triangle = cast addChild(new Triangle());
+		
+		triangle.X1 = X1;
+		triangle.Y1 = Y1;
+		triangle.X2 = X2;
+		triangle.Y2 = Y2;
+		triangle.X3 = X3;
+		triangle.Y3 = Y3;
+		
+		triangle.Stroke = 0xFFFFFFFF;
+		triangle.Fill = new SolidColorBrush(fillcolor);
+		
+		triangle.Invalidate();
+		triangle.ValidateNow();
+		
+		var rtAX1:RandTween = new RandTween(triangle, "X1", 540);
+		var rtAY1:RandTween = new RandTween(triangle, "Y1", 320);
+		var rtAX2:RandTween = new RandTween(triangle, "X2", 540);
+		var rtAY2:RandTween = new RandTween(triangle, "Y2", 320);
+		var rtAX3:RandTween = new RandTween(triangle, "X3", 540);
+		var rtAY3:RandTween = new RandTween(triangle, "Y3", 320);
+		
+		return triangle;
 	}
-	
-	function onAX1Complete( e : Float )
-	{
-		tAX1 = new Tween( triangleA, triangleA.X1 , triangleA.X1-130, 4000 );
-		tAX1.setEasing(  Sine.easeInOut );
-		tAX1.setTweenHandlers( onAX1Update ,  function(e){} );
-		tAX1.start();
-			
-	}	
-	
 	
 	
 	
