@@ -42,7 +42,7 @@ class StageStretch
 	}
 	
 	function onResize(e:Event):Void
-	{			
+	{
 		Resize();
 	}
 	
