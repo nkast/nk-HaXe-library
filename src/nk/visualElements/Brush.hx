@@ -13,7 +13,7 @@ class Brush
 		 
 	}
 	
-	public function BeginFill(target:Sprite) 
+	public function BeginFill(target:Sprite)
 	{
 		
 	}	
