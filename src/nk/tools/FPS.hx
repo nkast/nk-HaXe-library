@@ -9,13 +9,15 @@ import flash.events.Event;
 import flash.Lib;
 import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
+import flash.text.TextFormat;
 
 class FPS extends Sprite
 {
 	private var last:UInt;
     private var ticks:UInt;
     private var tf:TextField;
-
+	var format:TextFormat ;
+	
 	public function new(xPos:Int = 0, yPos:Int = 0, color:UInt = 0xffffff, fillBackground:Bool = false, backgroundColor:UInt = 0x000000)
 	{
 		super();
@@ -26,7 +28,7 @@ class FPS extends Sprite
         this.y = yPos;
         tf = new TextField();
         tf.textColor = color;
-        tf.text = "----- fps";
+        tf.text = "00.0 fps";
         tf.selectable = false;
         tf.background = fillBackground;
         tf.backgroundColor = backgroundColor;
@@ -34,6 +36,10 @@ class FPS extends Sprite
         addChild(tf);
         width = tf.textWidth;
         height = tf.textHeight;
+			
+		format = new TextFormat("verdana", 16, color, true);
+		tf.setTextFormat(format);		
+		
         addEventListener(Event.ENTER_FRAME, onEnterFrame);
 
 		return;
@@ -49,8 +55,11 @@ class FPS extends Sprite
             var fps:Float = ticks / delta * 1000;
             tf.text = untyped fps.toFixed(1) + " fps";
             ticks = 0;
-            last = now;
+            last = now;			
         }
+		
+		tf.setTextFormat(format);
+		
 	}
 	
 	
