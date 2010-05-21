@@ -32,7 +32,7 @@ class Item01 extends ContentPageBase
 	{		
 		super.Begin();
 	
-		visible = true;		
+		visible = true;
 		var t = new Tween( this, alpha, 1, 2000 );
 		t.setEasing(  Linear.easeInOut );
 		t.setTweenHandlers( onTweenUpdate,  function(e){} );
