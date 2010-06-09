@@ -59,7 +59,7 @@ class ContainerMgr extends EventDispatcher
 			container.addChild(content);
 			items.push(content);
 		}
-				
+		
 		content.addEventListener(ContainersEvent.CONTENTPAGE_END_FINISHED, onContentPageFinished);
 		return content;
 	}
@@ -68,7 +68,7 @@ class ContainerMgr extends EventDispatcher
 	{
 		for (mc in items)
 		{
-			var cp:IContentPage = GetContentPage(mc);		
+			var cp:IContentPage = GetContentPage(mc);
 			if(cp!=null)
 			{
 				if(cp.CPState==ContentPageState.Begin)
@@ -89,7 +89,7 @@ class ContainerMgr extends EventDispatcher
 	
 	private function onContentPageFinished(evt:ContainersEvent)
 	{
-		var mc:Sprite = evt.target;
+		var mc:Sprite = cast(evt.target,Sprite);
 	
 		//remove finished movie from container
 		items.remove(mc);
@@ -101,8 +101,8 @@ class ContainerMgr extends EventDispatcher
 			var cp:IContentPage = GetContentPage(mc);	
 			if(cp!=null)
 			{
-				if (cp.CPState == ContentPageState.Begin) return;
-				if (cp.CPState == ContentPageState.Init) cp.Begin();
+				if (cp.GetCPState() == ContentPageState.Begin) return;
+				if (cp.GetCPState() == ContentPageState.Init) cp.Begin();
 			}
 		}
 		

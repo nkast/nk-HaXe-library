@@ -27,6 +27,7 @@ import flash.display.MovieClip;
 class ContentPageBase extends MovieClip, implements IContentPage
 {
 	public var CPState(default, null):ContentPageState;
+	public function GetCPState():ContentPageState { return CPState; }
 
 	public function new()
 	{
@@ -49,9 +50,10 @@ class ContentPageBase extends MovieClip, implements IContentPage
 		dispatchEvent(new ContainersEvent(ContainersEvent.CONTENTPAGE_END_STARTED));
 		onEnd();
 	}
-		
+	
 	private function onEndComplete()
 	{
+		trace("onEndComplete " + this.name);
 		dispatchEvent(new ContainersEvent(ContainersEvent.CONTENTPAGE_END_FINISHED));
 	}
 	

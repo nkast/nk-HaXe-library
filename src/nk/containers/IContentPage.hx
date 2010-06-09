@@ -25,7 +25,8 @@ package nk.containers;
 
 interface IContentPage 
 {
-	public var CPState(default,null):ContentPageState;
+	public var CPState(default, null):ContentPageState;
+	public function GetCPState():ContentPageState;
 	public function Begin():Void;
 	public function End():Void;
 }
