@@ -8,7 +8,6 @@ import flash.display.MovieClip;
 import flash.events.MouseEvent;
 import flash.Lib;
 import flash.net.URLRequest;
-import flash.trace.Trace;
 import haxe.Log;
 
 class MenuBtnBase extends MovieClip
