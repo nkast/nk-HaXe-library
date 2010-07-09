@@ -153,10 +153,7 @@ class MenuBtnBase extends MovieClip
 		}
 		
 	}
-	
-	
-	
-	
+		
 	//Internal.
 	private function SetSelectState()
 	{

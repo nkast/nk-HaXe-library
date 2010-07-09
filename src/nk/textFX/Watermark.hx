@@ -14,12 +14,12 @@ class Watermark
 	var wmColor:Int;
 	var defaultColor:Int;
 	
-	public function new(target:TextField,wmTxt:String)
+	public function new(target:TextField,wmTxt:String,wmColor:Int = 0xC0C0C0)
 	{
 		this.target = target;
 		this.wmTxt = wmTxt;
 		
-		this.wmColor = 0xC0C0C0;
+		this.wmColor = wmColor;
 		this.defaultColor = this.target.textColor;
 		
 		this.target.text = wmTxt;
