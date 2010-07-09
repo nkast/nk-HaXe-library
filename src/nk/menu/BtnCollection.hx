@@ -8,7 +8,7 @@ import flash.events.EventDispatcher;
 
 class BtnCollection extends EventDispatcher, implements IBtnCollection
 {
-	private var BtnList(default,null):Array<MenuBtnBase>;
+	private var btnList(default,null):Array<MenuBtnBase>;
 	
 	public function new()
 	{
@@ -18,7 +18,7 @@ class BtnCollection extends EventDispatcher, implements IBtnCollection
 	
 	public function AddBtn(menuBtn:MenuBtnBase):MenuBtnBase
 	{
-		menuBtnList.push(menuBtn);
+		btnList.push(menuBtn);
 		
 		// Add events 
 		menuBtn.addEventListener(MenuEvent.BUTTON_SELECTED, onBtnSelected);		
@@ -30,19 +30,19 @@ class BtnCollection extends EventDispatcher, implements IBtnCollection
 	
 	public function GetBtnList():Array<MenuBtnBase>
 	{
-		return menuBtnList;
+		return btnList;
 	}
 	
-	public function SelectFirstMenuBtn():Void
+	public function SelectFirstBtn():Void
 	{
 		if (btnList.length > 0)
 			btnList[0].Select();
 	}
 	
-	public function SelectLastMenuBtn():Void
+	public function SelectLastBtn():Void
 	{		
-		if (menuBtnList.length > 0)		
-			menuBtnList[menuBtnList.length-1].Select();
+		if (btnList.length > 0)		
+			btnList[btnList.length-1].Select();
 	}
 	
 	public function UnselectAll():Void
